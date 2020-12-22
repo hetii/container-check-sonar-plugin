@@ -13,7 +13,7 @@
         "Layer": {
           "DiffID": "sha256:6f23cf4d16deb170554e0237bec12e4fb488c78222a20e172462ba4776affb3d"
         },
-	"References": [
+        "References": [
           "http://www.securityfocus.com/bid/103367",
           "https://bugs.debian.org/892179",
           "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-7738",
