@@ -1,6 +1,7 @@
 [
   {
     "Target": "mojdigitalstudio/digital-probation-java-skeleton (ubuntu 18.04)",
+    "Type": "alpine",
     "Vulnerabilities": [
       {
         "VulnerabilityID": "CVE-2018-7738",
@@ -9,7 +10,10 @@
         "Title": "util-linux: Shell command injection in unescaped bash-completed mount point names",
         "Description": "In util-linux before 2.32-rc1, bash-completion/umount allows local users to gain privileges by embedding shell commands in a mountpoint name, which is mishandled during a umount command (within Bash) by a different user, as demonstrated by logging in as root and entering umount followed by a tab character for autocompletion.",
         "Severity": "HIGH",
-        "References": [
+        "Layer": {
+          "DiffID": "sha256:6f23cf4d16deb170554e0237bec12e4fb488c78222a20e172462ba4776affb3d"
+        },
+	"References": [
           "http://www.securityfocus.com/bid/103367",
           "https://bugs.debian.org/892179",
           "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-7738",

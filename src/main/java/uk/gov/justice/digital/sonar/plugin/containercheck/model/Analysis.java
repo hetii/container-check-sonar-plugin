@@ -1,6 +1,7 @@
 package uk.gov.justice.digital.sonar.plugin.containercheck.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Collections;
 import java.util.List;
@@ -11,6 +12,7 @@ import lombok.ToString;
 @Getter
 @EqualsAndHashCode
 @ToString
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Analysis {
 
     /**
