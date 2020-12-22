@@ -52,8 +52,14 @@ public class ContainerCheckSensor implements ProjectSensor {
             final FilePredicate filePredicate = context.fileSystem().predicates().matchesPathPattern(dockerPath);
             final Iterator<InputFile> files = context.fileSystem().inputFiles(filePredicate).iterator();
             final ContainerImageDependencyReason dependencyReason;
+
             if (!files.hasNext()) {
-                LOGGER.warn("No Dockerfiles found matching path property {}. ", dockerPath);
+                LOGGER.warn("No Dockerfiles found matching path property: {}", dockerPath);
+                LOGGER.warn("Please check also sonar.sources property eg. in sonar-project.properties, as it can be used as a prefix for above docker path.");
+                LOGGER.debug("baseDir is set to: {}", context.fileSystem().baseDir());
+                context.fileSystem().inputFiles(context.fileSystem().predicates().all()).forEach(
+                    inputFile -> LOGGER.debug("inputFile.relativePath: {}", inputFile.relativePath())
+		);
                 dependencyReason = null;
             }
             else {
